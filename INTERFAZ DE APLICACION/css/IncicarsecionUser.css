@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary-purple: #5A47C1;
+    --light-purple: #D7D2EF;
+    --yellow: #FFD700; /* Adjusted for a brighter yellow similar to the image */
+    --dark-purple-decoration: #5A47C1; /* Using primary purple for this as it matches visually */
+    --black-decoration: #000000;
+    --text-color: #333;
+    --placeholder-color: #888;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Light grey background */
+    overflow: hidden; /* Hide overflow from decorations */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 375px; /* Common mobile width */
+    height: 812px; /* Common mobile height for iPhone X/XR/11/12 */
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden; /* Keep decorations within container */
+}
+
+/* Top Yellow Decorations */
+.top-decoration-yellow {
+    position: absolute;
+    top: -50px; /* Adjust to move part of the circle off-screen */
+    left: -50px; /* Adjust to move part of the circle off-screen */
+    width: 200px;
+    height: 200px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.top-decoration-small-yellow {
+    position: absolute;
+    top: 0px; /* Adjust to move part of the circle off-screen */
+    right: -80px; /* Adjust to move part of the circle off-screen */
+    width: 150px;
+    height: 150px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.7; /* Make it slightly transparent to differentiate */
+}
+
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.back-button a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.login-section {
+    position: relative;
+    z-index: 5; /* Ensure login content is above decorations */
+    padding: 20px;
+    padding-top: 150px; /* Space for top decorations and back button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    align-self: flex-start; /* Align title to the left */
+    padding-left: 20px; /* Adjust for padding of the section */
+}
+
+.input-group {
+    width: calc(100% - 40px); /* Account for 20px padding on each side */
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--light-purple);
+    color: var(--text-color);
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.input-group input::placeholder {
+    color: var(--placeholder-color);
+    opacity: 1; /* Firefox default opacity */
+}
+
+.password-group {
+    display: flex;
+    align-items: center;
+}
+
+.password-group input {
+    flex-grow: 1;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--placeholder-color);
+    font-size: 20px;
+}
+
+button {
+    width: calc(100% - 40px);
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-purple);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4A3AAB; /* Slightly darker purple on hover */
+}
+
+/* Bottom Decorations */
+.bottom-decoration-purple {
+    position: absolute;
+    bottom: -100px; /* Adjust to move part of the circle off-screen */
+    left: -100px; /* Adjust to move part of the circle off-screen */
+    width: 250px;
+    height: 250px;
+    background-color: var(--dark-purple-decoration);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.bottom-decoration-black {
+    position: absolute;
+    bottom: -150px; /* Adjust to move part of the circle off-screen */
+    right: -150px; /* Adjust to move part of the circle off-screen */
+    width: 300px;
+    height: 300px;
+    background-color: var(--black-decoration);
+    border-radius: 50%;
+    z-index: 1;
+}
