@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffffff 40%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(106, 76, 175, 0.7);
+}
+
+.container::before {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    left: -100px;
+    transform: rotate(20deg);
+}
+
+.container::after {
+    width: 500px;
+    height: 500px;
+    bottom: -200px;
+    right: -150px;
+    transform: rotate(-30deg);
+    background-color: rgba(106, 76, 175, 0.5);
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    color: white;
+    box-sizing: border-box;
+}
+
+.back-arrow {
+    position: absolute;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-section {
+    margin-top: 50px;
+    z-index: 1;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #f7d730;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.admin-section {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    z-index: 1;
+}
+
+.admin-section p {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background-color: #6a4caf;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #5a3c9e;
+}
+
+.secondary-btn {
+    background-color: #8c78c2;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #7c68b2;
+}
+
+@media (max-width: 375px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .admin-section {
+        width: 90%;
+    }
+}
+a {
+    color: white;
+    text-decoration: none;
+}

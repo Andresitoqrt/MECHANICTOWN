@@ -35,20 +35,20 @@ body {
 }
 
 .container::before {
-    /* Bottom left yellow circle */
+   
     width: 200px;
     height: 200px;
-    background-color: #f8d405; /* Yellow */
+    background-color: #f8d405; 
     bottom: -80px;
     left: -100px;
     transform: rotate(20deg);
 }
 
 .container::after {
-    /* Top right yellow circle */
+   
     width: 180px;
     height: 180px;
-    background-color: #f8d405; /* Yellow */
+    background-color: #f8d405; 
     top: -50px;
     right: -80px;
     transform: rotate(-30deg);
