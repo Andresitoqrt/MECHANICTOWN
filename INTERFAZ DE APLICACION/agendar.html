@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar</title>
+    <link rel="stylesheet" href="css/CitasUser.css">
+</head>
+<body>
+    <div class="title">
+        <div>
+            <a href="#">MY MECHANIC</a>
+        </div>
+        <div>
+            <a href="#"><img src="img/whatsapp.png" alt=""></a>
+        </div>
+    </div>
+    <h1>Agendar Cita</h1>
+
+    <div class="agendar-cita">
+  <div class="campo">
+    <label for="dia">Día</label>
+    <input type="text" class="DD" placeholder="DD" />
+  </div>
+  <div class="campo">
+    <label for="mes">Mes</label>
+    <input type="text" class="MM" placeholder="MM" />
+  </div>
+  <div class="campo">
+    <label for="anio">Año</label>
+    <input type="text" class="AA" placeholder="AAAA" />
+  </div>
+  <div class="campo">
+    <label for="hora">Hora</label>
+    <input type="text" class="HH" placeholder="HH:HH" />
+  </div>
+</div>
+
+    <h1>Fecha</h1>
+    <div class="calendar">
+    <div class="calendar-header">
+      <button id="prev-month">&lt;</button>
+      <h2 id="month-year"></h2>
+      <button id="next-month">&gt;</button>
+    </div>
+    <div class="calendar-days">
+      <div>Dom</div><div>Lun</div><div>Mar</div><div>Mie</div>
+      <div>Jue</div><div>Vie</div><div>Sab</div>
+    </div>
+    <div id="calendar-dates" class="calendar-dates"></div>
+  </div>
+   
+   <h1>Horario</h1>
+<div class="agendar-cita-horario">
+    <div class="horario-card">
+    <h3>Horas reservadas</h3>
+    <div class="horas" id="horas">
+      <!-- Horas se generan con JavaScript -->
+    </div>
+    <button class="btn">Ver más</button>
+  </div>
+
+  <div class="horario-card">
+    <h3>Hora de tu cita</h3>
+    <div class="selector">
+      <div class="ampm active" id="am">am</div>
+      <div class="ampm" id="pm">pm</div>
+    </div>
+    <div class="hora-display">
+      <span class="flecha" onclick="cambiarHora(-1)">&#9664;</span>
+      <span id="hora">6:00</span>
+      <span class="flecha" onclick="cambiarHora(1)">&#9654;</span>
+    </div>
+    <button class="btn">Agendar</button>
+  </div>
+</div>
+   
+<div class="bottom-nav">
+    <a href="Citas.html"><img src="img/google-docs.png" alt=""></a>
+    <a href="#"><img src="img/calendar-check.png" alt=""></a>
+    <a href="#"><img src="img/file.png" alt=""></a>
+    <a href="#"><img src="img/settings.png" alt=""></a>
+</div>
+<br><br>
+<br><br>
+
+<script src="js/script.js"></script>
+</body>
+</html>

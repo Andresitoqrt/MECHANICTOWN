@@ -170,3 +170,7 @@ h1 {
 .register-button:hover {
     background-color: #553cdb; /* Darker purple on hover */
 }
+a {
+    color: white;
+    text-decoration: none;
+}
