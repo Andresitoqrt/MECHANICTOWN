@@ -19,30 +19,68 @@
 
     <h1 class="citas-title">Citas</h1>
 
-    <div class="citas-cards">
-        <div class="cards">
-            <div class="cards-logo">
-                <img src="img/calendar.png" alt="">
-                <h3>Historial</h3>
-            </div> 
-            <a href="#">5</a>        
-        </div>
-        <div class="cards">
-            <div class="cards-logo">
-                <img src="img/calendar-check.png" alt="">
-                <h3>Cita Actual</h3>
-            </div> 
-            <button class="button-cards"><img src="img/down-arrow.png" alt=""><a href="agendar.html"></a></button>        
-        </div>
-    </div>
-    <button class="add-btn">+</button>
-    <div class="bottom-nav">
-      <a href="#"><img src="img/google-docs.png" alt=""></a>
-      <a href="agendar.html"><img src="img/calendar-check.png" alt=""></a>
-      <a href="#"><img src="img/file.png" alt=""></a>
-      <a href="#"><img src="img/settings.png" alt=""></a>
+
+    <div class="cards">
+    <div class="cards-header">
+      <div style="display: flex; align-items: center;">
+        <span><img src="img/calendar.png" alt=""></span>
+        <h3>Historial</h3>
+      </div>
     </div>
   </div>
+    <br>
+    <div class="cards" id="toggle-cita">
+    <div class="cards-header">
+      <div style="display: flex; align-items: center;">
+        <span><img src="img/calendar.png" alt=""></span>
+        <h3>Cita Actual</h3>
+      </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/32/32195.png" class="arrow-icon" alt="flecha" id="arrow-icon" width="20">
+    </div>
 
+    <div class="card-content" id="cita-content">
+      <div class="info"><strong>Día:</strong><input type="text" class="write-problem" placeholder=""></div>
+      <div class="info"><strong>Hora:</strong><input type="text" class="write-problem" placeholder=""> </div>
+      <div class="info"><strong>Carro:</strong><input type="text" class="write-problem" placeholder=""> </div>
+      <div class="info"><strong>Causa:</strong><input type="text" class="write-problem" placeholder=""> </div>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="notif">
+        <label for="notif">Notificación</label>
+      </div>
+
+      <button class="edit-btn">Editar Cita</button>
+    </div>
+  </div>
+  <br>
+  
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('toggle-cita');
+      const content = document.getElementById('cita-content');
+      const arrow = document.getElementById('arrow-icon');
+
+      toggle.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') return;
+        content.classList.toggle('show');
+        arrow.classList.toggle('arrow-rotated');
+      });
+    });
+  </script>
+
+
+    <button class="add-btn">
+        <a href="agendar.html">+</a>
+    </button>
+
+    <div class="bottom-nav">
+      <a href="Citas.html"><img src="img/google-docs.png" alt=""></a>
+      <a href="agendar.html"><img src="img/calendar-check.png" alt=""></a>
+      <a href="Historial.html"><img src="img/file.png" alt=""></a>
+      <a href="#"><img src="img/settings.png" alt=""></a>
+    </div>
 </body>
 </html>

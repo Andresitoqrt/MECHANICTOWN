@@ -16,7 +16,7 @@
         </div>
     </div>
     <h1>Agendar Cita</h1>
-
+<div class="contenedor-agendar-cita">
     <div class="agendar-cita">
   <div class="campo">
     <label for="dia">Día</label>
@@ -34,7 +34,9 @@
     <label for="hora">Hora</label>
     <input type="text" class="HH" placeholder="HH:HH" />
   </div>
-</div>
+    </div>
+        <button class="btn-agendar">Agendar</button>
+</div> 
 
     <h1>Fecha</h1>
     <div class="calendar">
@@ -55,7 +57,6 @@
     <div class="horario-card">
     <h3>Horas reservadas</h3>
     <div class="horas" id="horas">
-      <!-- Horas se generan con JavaScript -->
     </div>
     <button class="btn">Ver más</button>
   </div>
@@ -68,17 +69,38 @@
     </div>
     <div class="hora-display">
       <span class="flecha" onclick="cambiarHora(-1)">&#9664;</span>
-      <span id="hora">6:00</span>
+      <span id="hora">12:00</span>
       <span class="flecha" onclick="cambiarHora(1)">&#9654;</span>
     </div>
+    <br>
+    <br>
     <button class="btn">Agendar</button>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="input-container char-count">
+  <label for="causa">Causa</label>
+  <div class="input-wrapper">
+    <span id="count-causa" class="char-counter">0/100</span>
+    <textarea id="causa" maxlength="100" oninput="updateCount('causa', 100)"></textarea>
+  </div>
+</div>
+
+<div class="input-container char-count">
+  <label for="carro">Carro</label>
+  <div class="input-wrapper">
+    <span id="count-carro" class="char-counter">0/50</span>
+    <input type="text" id="carro" maxlength="50" oninput="updateCount('carro', 50)">
   </div>
 </div>
    
 <div class="bottom-nav">
     <a href="Citas.html"><img src="img/google-docs.png" alt=""></a>
-    <a href="#"><img src="img/calendar-check.png" alt=""></a>
-    <a href="#"><img src="img/file.png" alt=""></a>
+    <a href="agendar.html"><img src="img/calendar-check.png" alt=""></a>
+    <a href="Historial.html"><img src="img/file.png" alt=""></a>
     <a href="#"><img src="img/settings.png" alt=""></a>
 </div>
 <br><br>

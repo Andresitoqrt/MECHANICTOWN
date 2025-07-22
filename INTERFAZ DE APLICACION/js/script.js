@@ -78,7 +78,7 @@ const horas = document.getElementById("horas");
     };
 
     // Cambiar hora con flechas
-    let horaActual = 6;
+    let horaActual = 12;
 
     function cambiarHora(delta) {
       horaActual += delta;
@@ -86,3 +86,29 @@ const horas = document.getElementById("horas");
       if (horaActual > 12) horaActual = 1;
       document.getElementById("hora").textContent = `${horaActual}:00`;
     }
+
+    function updateCount(id, max) {
+      const input = document.getElementById(id);
+      const count = document.getElementById(`count-${id}`);
+      count.textContent = `${input.value.length}/${max}`;
+    }
+
+  const toggleBtn = document.getElementById('toggle-cita');
+  const content = document.getElementById('cita-content');
+  const arrowIcon = toggleBtn.querySelector('.arrow-icon');
+
+  let isOpen = false;
+
+   document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('toggle-cita');
+      const content = document.getElementById('cita-content');
+      const arrow = document.getElementById('arrow-icon');
+
+      toggle.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') return;
+        content.classList.toggle('show');
+        arrow.classList.toggle('arrow-rotated');
+      });
+    });
+
+    

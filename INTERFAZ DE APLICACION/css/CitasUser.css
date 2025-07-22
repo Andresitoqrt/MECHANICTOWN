@@ -6,26 +6,6 @@
   font-size: 1rem;
 }
 
-.title a{
-    text-decoration: none;
-    color: black;
-}
-
-.title img{
-    width: 30px;
-}
-
-.cards{
-    background-color: #f8f8f8;
-    border-radius: 12px;
-    padding: 12px 16px;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
-}
-
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -44,35 +24,18 @@
     width: 30px;
 }
 
-.cards{
-  background-color: #f8f8f8;
-  border-radius: 12px;
-  padding: 12px 16px;
-  margin-bottom: 12px;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.title a{
+    text-decoration: none;
+    color: black;
 }
 
-.cards:hover {
-  transform: scale(1.03);
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+.title img{
+    width: 30px;
 }
 
-.citas-cards a{
+.add-btn a {
   text-decoration: none;
-  color: black;
-}
-
-.button-cards{
-  border: none;
-  width: 30px;
-
-}
-
-.citas-cards img{
-width: 30px;
+  color: white;
 }
 
 .add-btn {
@@ -82,7 +45,6 @@ width: 30px;
   width: 40px;
   height: 40px;
   font-size: 1.4rem;
-  color: white;
   background-color: #7289da;
   border: none;
   border-radius: 8px;
@@ -161,11 +123,17 @@ width: 30px;
   color: white;
 }
 
+.contenedor-agendar-cita{
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+}
+
 .agendar-cita{
   display: flex;
-  gap: 12px;
+  gap: 8px;
   background-color: #768df1;
-  padding: 14px 20px;
+  padding: 3px 20px;
   border-radius: 999px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
@@ -175,13 +143,14 @@ width: 30px;
   flex-direction: column;
   align-items: center;
   color: white;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .campo input {
   margin-top: 4px;
-  width: 48px;
+  width: 40px;
   height: 36px;
+  padding: 1px 5px;
   text-align: center;
   border: none;
   border-radius: 10px;
@@ -284,3 +253,188 @@ width: 30px;
   font-size: 20px;
   user-select: none;
 }
+
+.btn-agendar {
+  background-color: #768df1;
+  border: none;
+  padding: 20px 26px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s;
+  font-size: 17px;
+}
+
+.btn-agendar:hover {
+  transform: scale(1.05);
+}
+
+.char-count {
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+.char-count label {
+  font-weight: bold;
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper textarea,
+.input-wrapper input[type="text"] {
+  width: 100%;
+  padding: 22px 10px 10px 10px; /* espacio arriba para el contador */
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  resize: none;
+  box-sizing: border-box;
+}
+
+.input-wrapper textarea {
+  height: 60px;
+}
+
+.char-counter {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  font-size: 0.75em;
+  color: #555;
+  pointer-events: none;
+}
+
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    .cards {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      transition: box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .cards img{
+      width: 30px;
+    }
+
+    .cards:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .cards-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cards-header h3 {
+      margin-left: 10px;
+      font-size: 1.1rem;
+    }
+
+    .arrow-icon {
+      width: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .arrow-rotated {
+      transform: rotate(180deg);
+    }
+
+    .card-content {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+    }
+
+    .card-content.show {
+      max-height: 500px;
+      margin-top: 10px;
+    }
+
+    .info {
+      background-color: #eee;
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin: 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .edit-btn {
+      background-color: #7289da;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+  .write-problem{
+    margin-left: 8px;
+    padding-right: 80px;
+    background-color: #eee;
+    border: none ;
+  }
+
+  .search-container {
+    width: 90%; 
+    max-width: 500px; 
+    padding: 10px;
+    background-color: #f0f0f0; 
+    border-radius: 10px; 
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 2px 12px 40px; 
+    border: none;
+    border-radius: 25px; 
+    font-size: 16px;
+    background-color: #e0e0e0; 
+    color: #333; 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+
+
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 20px 20px;
+}
+
+.search-input::placeholder {
+    color: #888; 
+    opacity: 1; 
+}
+
+.search-input:focus {
+    background-color: #fff; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); 
+}
+

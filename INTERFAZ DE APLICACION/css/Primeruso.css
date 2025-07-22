@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Light background */
+    overflow: hidden; /* To prevent scroll due to shapes */
+}
+
+.container {
+    background-color: #fff;
+    width: 90%; /* Responsive width */
+    max-width: 360px; /* Maximum width */
+    height: 80vh; /* Responsive height */
+    max-height: 720px; /* Maximum height */
+   
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.header-shapes,
+.footer-shapes {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-shapes {
+    top: 0;
+    height: 30%; /* Responsive height */
+    z-index: 1;
+}
+
+.footer-shapes {
+    bottom: 0;
+    height: 20%; /* Responsive height */
+    z-index: 1;
+}
+
+.header-shapes .shape-large {
+    position: absolute;
+    width: 50vw; /* Responsive width */
+    height: 50vw; /* Keep aspect ratio */
+    background-color: #6a5acd; /* Purple */
+    border-radius: 50%;
+    top: -20vw;
+    right: -20vw;
+}
+
+.header-shapes .shape-small {
+    position: absolute;
+    width: 25vw; /* Responsive width */
+    height: 25vw; /* Keep aspect ratio */
+    background-color: #9370db; /* Lighter Purple */
+    border-radius: 50%;
+    top: -5vw;
+    left: -20vw;
+}
+
+.footer-shapes .shape-large {
+    position: absolute;
+    width: 40vw; /* Responsive width */
+    height: 40vw; /* Keep aspect ratio */
+    background-color: #9370db; /* Lighter Purple */
+    border-radius: 50%;
+    bottom: -20vw;
+    left: -25vw;
+}
+
+.footer-shapes .shape-small {
+    position: absolute;
+    width: 20vw; /* Responsive width */
+    height: 20vw; /* Keep aspect ratio */
+    background-color: #6a5acd; /* Purple */
+    border-radius: 50%;
+    bottom: -5vw;
+    right: -15vw;
+}
+
+
+.content {
+    position: relative;
+    z-index: 2; /* Ensure content is above shapes */
+    padding: 20px;
+    width: 80%; /* Responsive width for content */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally within content */
+}
+
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 24px; /* Slightly smaller for responsiveness */
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center; /* Center the title */
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group input {
+    width: calc(100% - 40px); /* Adjust for padding */
+    padding: 12px 20px; /* Slightly smaller padding for responsiveness */
+    border: none;
+    border-radius: 30px;
+    background-color: #e0e0f0; /* Light purple for input fields */
+    font-size: 16px;
+    color: #555;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #888;
+}
+
+.password-input-group {
+    width: 100%;
+    position: relative;
+}
+
+.password-input-group input {
+    width: calc(100% - 40px); /* Adjust for padding */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #e0e0f0;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+}
+
+.password-input-group .toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px; /* Slightly smaller padding for responsiveness */
+    background-color: #6a5acd; /* Purple */
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px; /* Adjust margin */
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #543ea2; /* Darker purple on hover */
+}

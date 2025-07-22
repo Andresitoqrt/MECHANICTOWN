@@ -1,0 +1,429 @@
+/* Variables CSS para colores y sombras */
+:root {
+    --primary-blue: #007bff; /* Un azul vibrante */
+    --light-blue: #e0f2ff; /* Para el fondo de elementos activos */
+    --text-dark: #333;
+    --text-light: #666;
+    --background-light: #f8f9fa;
+    --card-background: #ffffff;
+    --border-color: #dee2e6;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 6px 18px rgba(0, 0, 0, 0.12);
+    --delete-red: #dc3545;
+    --button-hover-darken: brightness(0.9);
+}
+
+/* Reset básico y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-light);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea al inicio para que el scroll funcione */
+    min-height: 100vh;
+    padding: 20px 10px; /* Padding general para el cuerpo */
+    color: var(--text-dark);
+}
+
+/* Contenedor principal de la aplicación */
+.app-container {
+    background-color: var(--card-background);
+    border-radius: 20px; /* Esquinas redondeadas estilo Samsung */
+    box-shadow: var(--shadow-medium);
+    width: 100%;
+    max-width: 400px; /* Ancho máximo típico para un móvil */
+    overflow: hidden; /* Asegura que el contenido redondeado se vea bien */
+}
+
+/* Encabezado de la aplicación */
+.app-header {
+    background-color: var(--card-background);
+    padding: 25px 20px 15px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.app-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    letter-spacing: 0.05em;
+}
+
+.section-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+/* Contenedor de pestañas y botón Agendar */
+.tabs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    background-color: var(--background-light);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.tab-button {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--text-dark);
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+.tab-button.active {
+    background-color: var(--primary-blue);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button:not(.active):hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.action-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.95em;
+}
+
+.action-button.primary {
+    background-color: var(--primary-blue);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.action-button.primary:hover {
+    background-color: var(--primary-blue);
+    filter: var(--button-hover-darken);
+}
+
+.action-button.small {
+    padding: 8px 12px;
+    font-size: 0.8em;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+
+/* Contenido de las pestañas */
+.tab-content {
+    padding: 20px;
+    display: none; /* Oculta por defecto */
+}
+
+.tab-content.active {
+    display: block; /* Muestra el contenido activo */
+}
+
+.content-header {
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el título de "Dias Habiles" */
+}
+
+.content-header h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--primary-blue); /* Color más prominente para el título de la sección */
+}
+
+/* Contenedor de franjas horarias (Horas Habiles) */
+.time-slots-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para cada franja horaria */
+.time-slot {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-blue); /* Fondo azul claro como el de la imagen */
+    border-radius: 12px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    gap: 10px; /* Espacio entre los elementos dentro de la franja */
+}
+
+.time-slot input[type="time"] {
+    flex-grow: 1;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--text-dark);
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+.time-slot input[type="time"]:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.time-slot-separator {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.1em;
+}
+
+.delete-time-slot-btn {
+    background: none;
+    border: none;
+    color: var(--delete-red); /* Rojo para el icono de borrar */
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.delete-time-slot-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Controles inferiores (añadir/borrar todo) */
+.controls-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 10px; /* Espacio entre las franjas y los botones */
+}
+
+.control-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.control-button.add {
+    background-color: var(--primary-blue);
+    color: white;
+    width: 60px; /* Ancho fijo para el botón de añadir */
+    height: 60px; /* Altura fija para el botón de añadir */
+    border-radius: 50%; /* Circular */
+    font-size: 1.5em; /* Icono más grande */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.control-button.add:hover {
+    background-color: var(--primary-blue);
+    filter: var(--button-hover-darken);
+    transform: translateY(-2px);
+}
+
+.control-button.clear {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background-color: var(--primary-blue); /* Color consistente con Agendar */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.control-button.clear:hover {
+    background-color: var(--primary-blue);
+    filter: var(--button-hover-darken);
+    transform: translateY(-2px);
+}
+
+
+/* --- Estilos para el Calendario (Fechas Habiles) --- */
+.calendar-container {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    padding: 20px;
+    max-width: 360px; /* Ajuste para el calendario dentro del contenedor */
+    margin: 0 auto; /* Centrar el calendario */
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto; /* Flecha izquierda, Mes/Año, Flecha derecha, Botón */
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--primary-blue); /* Color del texto del encabezado */
+}
+
+.calendar-month-year {
+    font-size: 1.6em;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap; /* Evita que el mes se rompa en varias líneas */
+}
+
+.calendar-nav-btn {
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    color: var(--primary-blue);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-nav-btn:hover {
+    background-color: var(--light-blue);
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.calendar-weekdays > div {
+    padding: 8px 0;
+}
+
+.calendar-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Tamaño fijo para los días */
+    height: 40px;
+    border-radius: 50%; /* Días circulares */
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    color: var(--text-dark);
+}
+
+.calendar-day.empty {
+    background-color: transparent;
+    cursor: default;
+}
+
+.calendar-day.selectable:not(.selected):hover {
+    background-color: var(--light-blue);
+}
+
+.calendar-day.selected {
+    background-color: var(--primary-blue);
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.25);
+}
+
+.calendar-day.disabled {
+    background-color: #f0f0f0; /* Fondo gris para días deshabilitados */
+    color: #b0b0b0; /* Texto gris claro */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Responsividad básica para pantallas pequeñas (aunque ya es móvil primero) */
+@media (max-width: 480px) {
+    .app-container {
+        border-radius: 0; /* Sin bordes redondeados en pantallas muy pequeñas */
+        box-shadow: none;
+        max-width: 100%;
+    }
+
+    .app-header, .tabs-container, .tab-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .tabs-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .tab-buttons {
+        width: 100%;
+    }
+
+    .action-button.primary {
+        width: 100%;
+    }
+
+    .time-slot {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan si el espacio es limitado */
+        justify-content: center;
+    }
+    
+    .time-slot input[type="time"] {
+        width: calc(50% - 15px); /* Para que ocupen la mitad del ancho */
+    }
+
+    .time-slot-separator {
+        width: 100%; /* El guion se va a una nueva línea */
+        text-align: center;
+    }
+
+    .calendar-container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .calendar-header {
+        grid-template-columns: auto 1fr auto; /* Ocultar "Seleccionar todo" en pantallas muy pequeñas o moverlo */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .calendar-header .action-button.small {
+        grid-column: span 3; /* Ocupa todo el ancho si se mueve abajo */
+        margin-top: 10px;
+    }
+
+    .calendar-month-year {
+        font-size: 1.4em;
+    }
+
+    .calendar-day {
+        width: 38px;
+        height: 38px;
+        font-size: 0.95em;
+    }
+}
