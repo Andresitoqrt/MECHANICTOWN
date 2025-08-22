@@ -17,18 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = passwordInput.value.trim();
 
             if (email === '') {
-                alert('El correo electrónico es obligatorio.');
+                // Mostrar mensaje de campo obligatorio
+                emailInput.setCustomValidity('El correo electrónico es obligatorio.');
+                emailInput.reportValidity();
                 emailInput.focus();
                 return;
+            } else {
+                emailInput.setCustomValidity('');
             }
 
             if (password === '') {
-                alert('La contraseña es obligatoria.');
+                // Mostrar mensaje de campo obligatorio
+                passwordInput.setCustomValidity('La contraseña es obligatoria.');
+                passwordInput.reportValidity();
                 passwordInput.focus();
                 return;
+            } else {
+                passwordInput.setCustomValidity('');
             }
 
-            alert(`Intentando iniciar sesión con:\nCorreo: ${email}\nContraseña: ${password}`);
+            // Aquí puedes continuar con el proceso de inicio de sesión
         });
     }
 });

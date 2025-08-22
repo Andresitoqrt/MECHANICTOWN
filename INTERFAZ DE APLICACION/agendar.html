@@ -1,111 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendar</title>
-    <link rel="stylesheet" href="css/CitasUser.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar</title>
+    <link rel="stylesheet" href="css/CitasUser.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="title">
-        <div>
-            <a href="#">MY MECHANIC</a>
-        </div>
-        <div>
-            <a href="#"><img src="img/whatsapp.png" alt=""></a>
-        </div>
-    </div>
-    <h1>Agendar Cita</h1>
-<div class="contenedor-agendar-cita">
-    <div class="agendar-cita">
-  <div class="campo">
-    <label for="dia">Día</label>
-    <input type="text" class="DD" placeholder="DD" />
-  </div>
-  <div class="campo">
-    <label for="mes">Mes</label>
-    <input type="text" class="MM" placeholder="MM" />
-  </div>
-  <div class="campo">
-    <label for="anio">Año</label>
-    <input type="text" class="AA" placeholder="AAAA" />
-  </div>
-  <div class="campo">
-    <label for="hora">Hora</label>
-    <input type="text" class="HH" placeholder="HH:HH" />
-  </div>
-    </div>
-        <button class="btn-agendar">Agendar</button>
-</div> 
+    <div class="title">
+        <div>
+            <a href="#">MY MECHANIC</a>
+        </div>
+        <div>
+            <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+    </div>
+    <h1>Agendar Cita</h1>
 
-    <h1>Fecha</h1>
-    <div class="calendar">
-    <div class="calendar-header">
-      <button id="prev-month">&lt;</button>
-      <h2 id="month-year"></h2>
-      <button id="next-month">&gt;</button>
-    </div>
-    <div class="calendar-days">
-      <div>Dom</div><div>Lun</div><div>Mar</div><div>Mie</div>
-      <div>Jue</div><div>Vie</div><div>Sab</div>
-    </div>
-    <div id="calendar-dates" class="calendar-dates"></div>
-  </div>
-   
-   <h1>Horario</h1>
-<div class="agendar-cita-horario">
-    <div class="horario-card">
-    <h3>Horas reservadas</h3>
-    <div class="horas" id="horas">
-    </div>
-    <button class="btn">Ver más</button>
-  </div>
+    <h1>Fecha</h1>
+    <div class="calendar">
+        <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <h2 id="month-year"></h2>
+            <button id="next-month">&gt;</button>
+        </div>
+        <div class="calendar-days">
+            <div>Dom</div><div>Lun</div><div>Mar</div><div>Mie</div>
+            <div>Jue</div><div>Vie</div><div>Sab</div>
+        </div>
+        <div id="calendar-dates" class="calendar-dates"></div>
+    </div>
+    
+    <h1>Horario</h1>
+    <div class="agendar-cita-horario">
+        <div class="horario-card">
+            <h3>Horas reservadas</h3>
+            <div class="horas" id="horas"></div>
+        </div>
+        <div class="horario-card">
+            <h3>Hora de tu cita</h3>
+            <div class="selector">
+                <div class="ampm active" id="am" onclick="cambiarAmPm('am')">am</div>
+                <div class="ampm" id="pm" onclick="cambiarAmPm('pm')">pm</div>
+            </div>
+            <div class="hora-display">
+                <span class="flecha" onclick="cambiarHora(-1)">&#9664;</span>
+                <span id="hora">12:00</span>
+                <span class="flecha" onclick="cambiarHora(1)">&#9654;</span>
+            </div>
+            <br><br>
+            <button class="btn" id="btn-agendar">Agendar</button>
+        </div>
+    </div>
 
-  <div class="horario-card">
-    <h3>Hora de tu cita</h3>
-    <div class="selector">
-      <div class="ampm active" id="am">am</div>
-      <div class="ampm" id="pm">pm</div>
-    </div>
-    <div class="hora-display">
-      <span class="flecha" onclick="cambiarHora(-1)">&#9664;</span>
-      <span id="hora">12:00</span>
-      <span class="flecha" onclick="cambiarHora(1)">&#9654;</span>
-    </div>
-    <br>
-    <br>
-    <button class="btn">Agendar</button>
-  </div>
-</div>
+    <br><br>
+    
+    <div class="input-container char-count">
+        <label for="causa">Causa</label>
+        <div class="input-wrapper">
+            <span id="count-causa" class="char-counter">0/100</span>
+            <textarea id="causa" maxlength="100" oninput="updateCount('causa', 100)"></textarea>
+        </div>
+    </div>
 
-<br>
-<br>
+    <div class="input-container char-count">
+        <label for="carro">Carro</label>
+        <div class="input-wrapper">
+            <button id="select-car-btn" class="select-car-btn">Seleccionar Carro</button>
+            <div id="selected-car-info" class="selected-car-info"></div>
+        </div>
+    </div>
+    
+    <div id="car-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Seleccionar Carro</h2>
+            <div id="car-list-container"></div>
+        </div>
+    </div>
+    
+    <div class="bottom-nav">
+        <a href="Citas.html"><img src="img/google-docs.png" alt="Citas"></a>
+        <a href="agendar.html"><img src="img/calendar-check.png" alt="Agendar"></a>
+        <a href="Historial.html"><img src="img/file.png" alt="Historial"></a>
+        <a href="#"><img src="img/settings.png" alt="Configuración"></a>
+    </div>
+    <br><br><br><br>
 
-<div class="input-container char-count">
-  <label for="causa">Causa</label>
-  <div class="input-wrapper">
-    <span id="count-causa" class="char-counter">0/100</span>
-    <textarea id="causa" maxlength="100" oninput="updateCount('causa', 100)"></textarea>
-  </div>
-</div>
-
-<div class="input-container char-count">
-  <label for="carro">Carro</label>
-  <div class="input-wrapper">
-    <span id="count-carro" class="char-counter">0/50</span>
-    <input type="text" id="carro" maxlength="50" oninput="updateCount('carro', 50)">
-  </div>
-</div>
-   
-<div class="bottom-nav">
-    <a href="Citas.html"><img src="img/google-docs.png" alt=""></a>
-    <a href="agendar.html"><img src="img/calendar-check.png" alt=""></a>
-    <a href="Historial.html"><img src="img/file.png" alt=""></a>
-    <a href="#"><img src="img/settings.png" alt=""></a>
-</div>
-<br><br>
-<br><br>
-
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
