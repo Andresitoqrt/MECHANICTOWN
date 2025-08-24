@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Accesibilidad e Idioma</title>
+
+  <!-- Tu CSS global -->
+  <link rel="stylesheet" href="css/CitasUser.css">
+
+</head>
+<body>
+
+  <div class="title">
+        <div>
+            <a href="#">MY MECHANIC</a>
+        </div>
+        <div>
+            <a href="#"><img src="img/whatsapp.png" alt=""></a>
+        </div>
+    </div>
+
+    <h1 class="citas-title">Accesibilidad e Idioma</h1>
+
+  <main class="pref-wrapper">
+    <!-- ====== Accesibilidad ====== -->
+    <section class="pref-card">
+      <button class="pref-item" data-target="#sec-access">
+        <span class="pref-left">
+          <span class="cfg-icon" aria-hidden="true"><img src="img/accesibility.png" alt=""></span>
+          <span class="pref-text">Accesibilidad</span>
+        </span>
+      </button>
+
+      <div class="pref-panel" id="sec-access">
+            <select class="fontScale">
+              <option value="1">Normal (100%)</option>
+              <option value="1.1">Grande (110%)</option>
+              <option value="1.25">Muy grande (125%)</option>
+              <option value="1.5">Extra (150%)</option>
+            </select>
+      </div>
+    </section>
+
+    <!-- ====== Idioma ====== -->
+    <section class="pref-card">
+      <button class="pref-item" data-target="#sec-language">
+        <span class="pref-left">
+          <span class="cfg-icon" aria-hidden="true"><img src="img/internet.png" alt=""></span>
+          <span class="pref-text">Lenguaje</span>
+        </span>
+      </button>
+
+      <div class="pref-panel" id="sec-language">
+            <select class="fontScale">
+              <option value="es">Español</option>
+              <option value="en">English</option>
+              <option value="pt">Português</option>
+              <option value="fr">Français</option>
+            </select>
+      </div>
+    </section>
+
+     <div class="bottom-nav">
+    <a href="Citas.html"><img src="img/google-docs.png" alt=""></a>
+    <a href="agendar.html"><img src="img/calendar-check.png" alt=""></a>
+    <a href="Historial.html"><img src="img/file.png" alt=""></a>
+    <a href="config.html"><img src="img/settings.png" alt=""></a>
+  </div>
+  </main>
+
+ 
+
+  <script src="js/prefs.js" defer></script>
+</body>
+</html>

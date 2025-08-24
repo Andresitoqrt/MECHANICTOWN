@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Configuración</title>
+
+  <!-- CSS de esta pantalla -->
+  <link rel="stylesheet" href="css/CitasUser.css">
+</head>
+<body>
+
+  <!-- Título superior, simple -->
+  <div class="title">
+        <div>
+            <a href="#">MY MECHANIC</a>
+        </div>
+        <div>
+            <a href="#"><img src="img/whatsapp.png" alt=""></a>
+        </div>
+    </div>
+
+    <h1 class="citas-title">Configuración</h1>
+
+
+  <!-- Contenedor principal -->
+  <main class="cfg-wrapper">
+    <!-- Tarjeta / sección: cada item abre un acordeón con campos editables -->
+
+    <section class="cfg-card">
+      <a href="#">
+        <button class="cfg-item" data-target="#sec-personal">
+        <span class="cfg-item-left">
+          <span class="cfg-icon" aria-hidden="true"><img src="img/customer-support.png" alt=""></span>
+          <span class="cfg-item-text">Centro de Ayuda</span>
+        </span>
+      </button>
+      </a>
+    </section>
+
+
+    <section class="cfg-card">
+      <a href="notificaciones.html">
+        <button class="cfg-item" data-target="#sec-notifications">
+        <span class="cfg-item-left">
+          <span class="cfg-icon" aria-hidden="true"><img src="img/notification.png" alt=""></span>
+          <span class="cfg-item-text">Notificaciones</span>
+        </span>
+      </button>
+      </a>
+    </section>
+
+    <section class="cfg-card">
+      <a href="accesibilidad.html">
+        <button class="cfg-item" data-target="#sec-subscriptions">
+        <span class="cfg-item-left">
+          <span class="cfg-icon" aria-hidden="true"><img src="img/accesibility.png" alt=""></span>
+          <span class="cfg-item-text">Accesibilidad</span>
+        </span>
+      </button></a>
+    </section>
+
+    
+
+    <section class="cfg-card">
+      <a href="#">
+        <button class="cfg-item" data-target="#sec-permissions">
+        <span class="cfg-item-left">
+          <span class="cfg-icon" aria-hidden="true"><img src="img/info.png" alt=""></span>
+          <span class="cfg-item-text">Información y permisos</span>
+        </span>
+      </button></a>
+    </section>
+
+  <!-- Barra de navegación inferior (tal cual me pediste) -->
+  <div class="bottom-nav">
+    <a href="Citas.html"><img src="img/google-docs.png" alt=""></a>
+    <a href="agendar.html"><img src="img/calendar-check.png" alt=""></a>
+    <a href="Historial.html"><img src="img/file.png" alt=""></a>
+    <a href="config.html"><img src="img/settings.png" alt=""></a>
+  </div>
+</main>
+
+  <script src="js/configuracion.js" defer></script>
+</body>
+</html>
